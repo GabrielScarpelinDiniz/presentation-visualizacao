@@ -1,0 +1,468 @@
+/* Base styles for slide container */
+.slides-container {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* Make sure reveal fills the container */
+.reveal {
+  height: 100%;
+  width: 100%;
+  cursor: default;
+}
+
+/* Add subtle animations to fragments */
+.fragment.fade-in {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fragment.fade-in.visible {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s ease;
+}
+
+.fragment.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  visibility: hidden;
+}
+
+.fragment.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+  transition: all 0.8s ease;
+}
+
+.fragment.fade-right {
+  opacity: 0;
+  transform: translateX(-20px);
+  visibility: hidden;
+}
+
+.fragment.fade-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+  visibility: visible;
+  transition: all 0.8s ease;
+}
+
+/* Make sure the reveal.js navigation arrows are visible */
+.reveal .controls {
+  color: #42A4FF !important;
+}
+
+.reveal .progress {
+  color: #42A4FF !important;
+  height: 4px !important;
+}
+
+/* Styling for code blocks */
+pre {
+  font-family: 'Fira Code', monospace !important;
+  font-size: 0.9em !important;
+  line-height: 1.4 !important;
+  background: #1a2638 !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15) !important;
+  border-radius: 10px !important;
+}
+
+/* Improve slide transitions */
+.reveal .slides section {
+  transition: transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985), 
+              opacity 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+
+/* Beautiful Slide Styles */
+.slide-title {
+  color: #42A4FF;
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.08);
+  background: linear-gradient(90deg, #42A4FF, #42A4FF);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.slide-subtitle {
+  color: #555;
+  font-size: 1.8rem;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.slide-author {
+  color: #777;
+  font-size: 1.2rem;
+  margin-top: 3rem;
+}
+
+.slide-footer {
+  color: #777;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}
+
+.section-title {
+  color: #42A4FF;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.05);
+  position: relative;
+  background: linear-gradient(90deg, #42A4FF, #2078ca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, #42A4FF, #42A4FF);
+  border-radius: 4px;
+}
+
+
+/* Agenda List - Fixing the spacing and size issue */
+.reveal .agenda-list {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  max-width: 85%;
+  margin: 0 auto;
+  list-style-type: decimal;
+    padding-left: 2rem;
+}
+
+
+.agenda-list li {
+  margin-bottom: 0.9rem;
+  padding: 0.5rem 0.8rem;
+  align-items: center;
+  border-radius: 0 6px 6px 0;
+  transition: all 0.2s ease;
+}
+
+.agenda-list li:hover {
+  transform: translateX(5px);
+}
+
+.agenda-list li strong {
+  margin-left: 0.5rem;
+}
+
+/* Content Layouts */
+.two-column-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.content-left {
+  text-align: left;
+}
+
+.content-center {
+  text-align: center;
+}
+
+/* Elements */
+.regular-text {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #444;
+}
+
+.highlight-box {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(30, 64, 175, 0.08));
+  padding: 1.8rem;
+  border-radius: 12px;
+  border-left: 5px solid #2563eb;
+  margin: 1.8rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.highlight-box:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transform: translateY(-3px);
+}
+
+.highlight-title {
+  color: #42A4FF;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Custom list styling for slides other than agenda */
+ul:not(.agenda-list):not(.importance-list) {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.large-emoji {
+  font-size: 8rem;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+}
+
+.quote-text {
+  color: #555;
+  font-style: italic;
+  font-size: 1.4rem;
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  line-height: 1.8;
+}
+
+.quote-text:before,
+.quote-text:after {
+  content: '"';
+  font-size: 2rem;
+  color: #42A4FF;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.quote-text:before {
+  left: 0;
+  top: -10px;
+}
+
+.quote-text:after {
+  right: 0;
+  bottom: -10px;
+}
+
+/* Importance list styles (improved) */
+.importance-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.2rem 0;
+}
+
+.reveal ol, .reveal dl, .reveal ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.importance-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #f8faff, #edf2ff);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  border-left: 4px solid #42A4FF;
+}
+
+.importance-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.importance-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #ffffff, #ffffff);
+  border-radius: 50%;
+  margin-right: 1.3rem;
+  color: white;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.importance-content {
+  flex: 1;
+}
+
+.importance-content strong {
+  display: block;
+  font-size: 1.2rem;
+  color: #42A4FF;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.importance-content p {
+  margin: 0;
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Data type slides */
+.data-type-container {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.05), rgba(30, 64, 175, 0.08));
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.data-type-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.data-type-icon {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #42A4FF, #42A4FF);
+  color: white;
+  font-size: 1.8rem;
+  border-radius: 12px;
+  margin-right: 1.5rem;
+  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+}
+
+.data-type-title {
+  font-size: 1.8rem;
+  color: #1e40af;
+  font-weight: bold;
+}
+
+.data-type-content {
+  line-height: 1.7;
+  color: #444;
+  font-size: 1.1rem;
+}
+
+.data-example-box {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+  border-left: 3px solid #42A4FF;
+}
+
+.data-example-title {
+  font-size: 1.1rem;
+  color: #42A4FF;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.data-structure-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8rem;
+  margin-top: 4rem;
+  margin-inline: 8rem;
+}
+
+.data-structure-card {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.data-structure-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.card-blue {
+  border-top: 4px solid #42A4FF;
+}
+
+.card-green {
+  border-top: 4px solid #000000;
+}
+
+.card-purple {
+  border-top: 4px solid #8b5cf6;
+}
+
+.data-structure-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.data-structure-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.benefit-card {
+  background: linear-gradient(135deg, #f8faff, #edf2ff) !important;
+  padding: 1.8rem !important;
+  border-radius: 15px !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08) !important;
+  text-align: center;
+  border-bottom: 4px solid #42A4FF;
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12) !important;
+}
+
+#data-question {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#data-question .quiz-button {
+    background-color: #ffffff;
+    color: #000;
+    border: 1px solid #42A4FF;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#data-question .quiz-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    background-color: #f0f0f0;
+}
+#data-question .quiz-button.selected {
+    background-color: #42A4FF;
+    color: white;
+    box-shadow: 0 4px 15px rgba(66, 164, 255, 0.2);
+}
