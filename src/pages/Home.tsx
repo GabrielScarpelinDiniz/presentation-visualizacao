@@ -15,6 +15,14 @@ const Home: React.FC = () => {
         "Design de dashboards",
       ],
     },
+    {
+      id: "supervised-learning",
+      title: "Aprendizado Supervisionado",
+      description:
+        "Entenda os fundamentos do aprendizado supervisionado e como aplicá-lo em problemas reais.",
+      icon: "🤖",
+      topics: ["Regressão", "Classificação", "Modelos preditivos"],
+    },
   ];
 
   return (

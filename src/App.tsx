@@ -3,6 +3,7 @@ import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import DataVisualizationSlides from "./slides/DataVisualizationSlides";
 import "./App.css";
+import SupervisedLearning from "./slides/SupervisedLearning";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           path="/data-visualization"
           element={<DataVisualizationSlides />}
         />
+        <Route path="/supervised-learning" element={<SupervisedLearning />} />
       </Routes>
     </div>
   );
